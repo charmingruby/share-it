@@ -24,6 +24,6 @@ describe('Get Question By Slug Use Case', () => {
     })
 
     expect(question.id).toBeTruthy()
-    expect(question.title).toEqual('Example question')
+    expect(question.slug.value).toEqual('example-question')
   })
 })

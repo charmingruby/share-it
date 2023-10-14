@@ -7,8 +7,8 @@ interface InstructorProps {
 
 export class Intructor extends Entity<InstructorProps> {
   static create(props: InstructorProps, id: UniqueEntityID) {
-    const answer = new Intructor(props, id)
+    const instructor = new Intructor(props, id)
 
-    return answer
+    return instructor
   }
 }
