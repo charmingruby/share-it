@@ -57,10 +57,6 @@ export class Question extends AggregateRoot<QuestionProps> {
     return this.content.substring(0, 120).trimEnd().concat('...')
   }
 
-  private touch() {
-    this.props.updatedAt = new Date()
-  }
-
   set title(title: string) {
     this.props.title = title
     this.props.slug = Slug.createFromText(title)
@@ -74,11 +70,16 @@ export class Question extends AggregateRoot<QuestionProps> {
 
   set attachments(attachments: QuestionAttachmentList) {
     this.props.attachments = attachments
+    this.touch()
   }
 
   set bestAnswerId(bestAnswerId: UniqueEntityID | undefined) {
     this.props.bestAnswerId = bestAnswerId
     this.touch()
+  }
+
+  private touch() {
+    this.props.updatedAt = new Date()
   }
 
   static create(

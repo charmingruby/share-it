@@ -6,6 +6,7 @@ import { QuestionAttachmentsRepository } from '../repositories/question-attachme
 import { QuestionAttachmentList } from '../../enterprise/entities/question-attachment-list'
 import { QuestionAttachment } from '../../enterprise/entities/question-attachment'
 import { UniqueEntityID } from '@/core/entities/unique-entity-id'
+import { Question } from '../../enterprise/entities/question'
 
 interface EditQuestionUseCaseRequest {
   authorId: string
@@ -17,7 +18,9 @@ interface EditQuestionUseCaseRequest {
 
 type EditQuestionUseCaseResponse = Either<
   ResourceNotFoundError | NotAllowedError,
-  {}
+  {
+    question: Question
+  }
 >
 
 export class EditQuestionUseCase {
@@ -59,12 +62,12 @@ export class EditQuestionUseCase {
 
     questionAttachmentList.update(questionAttachments)
 
+    question.attachments = questionAttachmentList
     question.title = title
     question.content = content
-    question.attachments = questionAttachmentList
 
     await this.questionsRepository.create(question)
 
-    return right({})
+    return right({ question })
   }
 }

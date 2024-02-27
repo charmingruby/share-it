@@ -9,4 +9,5 @@ export interface AnswersRepository {
   ): Promise<Answer[]>
   create(answer: Answer): Promise<void>
   delete(answer: Answer): Promise<void>
+  save(answer: Answer): Promise<void>
 }

@@ -19,8 +19,6 @@ describe('watched list', () => {
 
     list.add(4)
 
-    console.log(list.getNewItems)
-
     expect(list.currentItems).toHaveLength(4)
     expect(list.getNewItems()).toEqual([4])
   })
