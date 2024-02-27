@@ -20,6 +20,8 @@ describe('Create Question Use Case', () => {
 
     expect(result.isRight()).toBeTruthy()
     expect(inMemoryQuestionsRepository.items[0]).toEqual(result.value?.question)
-    expect(inMemoryQuestionsRepository.items[0].attachments).toHaveLength(2)
+    expect(
+      inMemoryQuestionsRepository.items[0].attachments.currentItems,
+    ).toHaveLength(2)
   })
 })
