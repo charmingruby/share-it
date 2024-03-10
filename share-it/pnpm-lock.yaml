@@ -14,6 +14,9 @@ dependencies:
   '@nestjs/platform-express':
     specifier: ^9.0.0
     version: 9.4.3(@nestjs/common@9.4.3)(@nestjs/core@9.4.3)
+  '@prisma/client':
+    specifier: ^5.10.2
+    version: 5.10.2
   reflect-metadata:
     specifier: ^0.1.13
     version: 0.1.14
@@ -434,6 +437,17 @@ packages:
       node-fetch: 2.7.0
     transitivePeerDependencies:
       - encoding
+
+  /@prisma/client@5.10.2:
+    resolution: {integrity: sha512-ef49hzB2yJZCvM5gFHMxSFL9KYrIP9udpT5rYo0CsHD4P9IKj473MbhU1gjKKftiwWBTIyrt9jukprzZXazyag==}
+    engines: {node: '>=16.13'}
+    requiresBuild: true
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dev: false
 
   /@tsconfig/node10@1.0.9:
     resolution: {integrity: sha512-jNsYVVxU8v5g43Erja32laIDHXeoNvFEpX33OK4d6hljo3jDhCBDhx5dhCCTMWUojscpAagGiRkBKxpdl9fxqA==}
