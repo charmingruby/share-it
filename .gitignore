@@ -1,5 +1,6 @@
-# Dependencies
+# dependencies
 node_modules
 
-# Build
+# Keep environment variables out of version control
+.env
 dist
