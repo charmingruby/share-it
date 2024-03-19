@@ -1,9 +1,9 @@
-import { UniqueEntityID } from '@/core/entities/unique-entity-id'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 import {
   AnswerComment,
   AnswerCommentProps,
-} from '@/domain/forum/enterprise/entities/answer-comment'
-import { faker } from '@faker-js/faker'
+} from '@/domain/forum/enterprise/entities/answer-comment';
+import { faker } from '@faker-js/faker';
 
 export function makeAnswerComment(
   override: Partial<AnswerCommentProps> = {},
@@ -17,7 +17,7 @@ export function makeAnswerComment(
       ...override,
     },
     id,
-  )
+  );
 
-  return answerComment
+  return answerComment;
 }
